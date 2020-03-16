@@ -1,0 +1,8 @@
+﻿FROM python:3.7
+WORKDIR /test_image
+COPY / /test_image
+COPY requirements.txt /test_image
+# install dependencies
+RUN pip install tensorflow==1.14.0
+RUN pip install -r requirements.txt
+CMD ["python", "Fashion_MNIST.py"]
